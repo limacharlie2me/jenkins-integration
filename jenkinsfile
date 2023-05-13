@@ -2,7 +2,7 @@ pipeline {
 
     agent any
 
-    tols {
+    tools {
         go '1.16.6'
     }
 
@@ -13,11 +13,6 @@ pipeline {
             steps{
                 echo "Validating Go version"
                 sh "go version"
-                // git 'https://github.com/limacharlie2me/jenkins-integration.git'
-            }
-
-            steps{
-                echo "Checking out code"
                 // git 'https://github.com/limacharlie2me/jenkins-integration.git'
             }
         }
