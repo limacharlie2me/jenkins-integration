@@ -8,7 +8,7 @@ pipeline {
 
             steps{
                 echo "Checking out master branch"
-                git 'https://github.com/limacharlie2me/jenkins-integration.git'
+                // git 'https://github.com/limacharlie2me/jenkins-integration.git'
             }
         }
 
