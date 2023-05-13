@@ -1,0 +1,20 @@
+pipeline {
+
+    agent: any
+
+    stages {
+
+        stage ('Checkout source') {
+            echo "Checking out master branch"
+            git 'https://github.com/limacharlie2me/jenkins-integration.git'
+        }
+
+        stage ('Build image') {
+            echo "Building image"
+        }
+    }
+
+    post {
+
+    }
+}
