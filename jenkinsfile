@@ -2,19 +2,31 @@ pipeline {
 
     agent any
 
+    tols {
+        go '1.16.6'
+    }
+
     stages {
 
         stage ('Checkout source') {
 
             steps{
-                echo "Checking out master branch"
+                echo "Validating Go version"
+                sh "go version"
+                // git 'https://github.com/limacharlie2me/jenkins-integration.git'
+            }
+
+            steps{
+                echo "Checking out code"
                 // git 'https://github.com/limacharlie2me/jenkins-integration.git'
             }
         }
 
         stage ('Build image') {
             steps {
-                echo "Building image"
+                echo "Building app"
+                sh 'go build main.go'
+                echo "Build complete"
             }
         }
     }
